@@ -1,3 +1,5 @@
+See `STYLE.md` before any visual change — it is the design system for this site.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
