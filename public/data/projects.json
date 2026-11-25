@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Lapis",
+    "description": "A Python framework for building REST APIs and WebSocket services directly on raw sockets, featuring file-based routing, URL slugs, streaming, and concurrent connections. Implements the WebSocket protocol from the ground up, including handshakes, frame encoding and decoding, fragmentation, and connection lifecycle management. Includes automated testing and CI to validate routing, streaming, and WebSocket functionality.",
+    "technologies": [
+      "Python",
+      "Socket Programming",
+      "REST APIs",
+      "WebSockets",
+      "asyncio",
+      "pytest",
+      "GitHub Actions"
+    ],
+    "github": "https://github.com/CQVan/Lapis"
+  },
+  {
+    "title": "TP2: Coding Arena",
+    "description": "A real-time multiplayer coding platform featuring peer-to-peer match communication and secure execution of user-submitted programs. Uses WebRTC data channels to synchronize match state and player communication with low latency. User-submitted code is compiled and executed in a sandboxed backend environment, allowing matches to be automatically evaluated while protecting the host system from arbitrary code execution.",
+    "technologies": [
+      "WebRTC",
+      "WebSockets",
+      "Sandboxed Code Execution",
+      "NodeJS"
+    ],
+    "github": "https://github.com/CQVan/Tp2"
+  },
+  {
+    "title": "AndroidNativeGoogleSignIn4Unity",
+    "description": "Published an MIT-licensed Unity package wrapping Android Credential Manager for Google Sign-In, with native Java/Gradle plugin, samples, and documentation.",
+    "technologies": [
+      "C#",
+      "Java",
+      "Unity",
+      "Android Credential Manager",
+      "Gradle"
+    ],
+    "github": "https://github.com/CQVan/AndroidNativeGoogleSignIn4Unity"
+  }
+]
