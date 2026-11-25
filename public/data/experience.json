@@ -1,0 +1,27 @@
+[
+  {
+    "role": "Backend Developer Intern",
+    "company": "IBM",
+    "startDate": "2026-05",
+    "endDate": "2026-08",
+    "description": "Contributed to IBM Project Polaris by developing UNIX command-line tools in C and Assembly that interface with z/OS through z/OS UNIX System Services. Designed a C API to expose z/OS capabilities to modern programming languages and developed a reusable JSON parsing library for z/OS tools and subsystem components. Built debugging and diagnostic tooling to identify, investigate, and resolve security and integrity issues within DFSMShsm components.",
+    "technologies": [
+      "C",
+      "Assembly",
+      "UNIX"
+    ]
+  },
+  {
+    "role": "Software Engineer, Cloud & Backend Services",
+    "company": "MZO Creative",
+    "startDate": "2025-12",
+    "description": "Developed cloud and backend services for Camp Wish You Well, a Unity visual novel serving 16,000+ monthly active users. Migrated backend infrastructure from Firebase to Unity Cloud Platform, reducing costs by 8.3% and accelerating development by 15%. Architected cross-platform authentication and account linking with Sign in with Apple and Android Credential Manager, reducing operational costs by 29.4%. Built secure cloud data storage, Unity IAP and Economy integrations supporting $13,000+ in transactions, and a remotely managed product catalog that enables content updates without requiring client redeployments.",
+    "technologies": [
+      "C#",
+      "Unity",
+      "Unity Cloud Platform",
+      "Sign in with Apple",
+      "Android Credential Manager"
+    ]
+  }
+]
