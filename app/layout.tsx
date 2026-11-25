@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LayoutProps from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
@@ -15,7 +16,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Chandler Van",
-  description: "Porfolio and Contact page of Chandler Van",
+  description: "Portfolio and Contact page of Chandler Van",
+  icons: {
+    icon: {
+      url: "/icon.svg",
+      type: "image/svg+xml",
+    },
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

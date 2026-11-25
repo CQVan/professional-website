@@ -99,9 +99,13 @@ to `foreground` on hover. No underline, dot, pill or left bar.
 
 ### External link
 
-Same colors as nav, `text-xs`, `target="_blank"` with
-`rel="noopener noreferrer"`. Label is the destination name (“GitHub”,
-“LinkedIn”), never “here” or an icon alone.
+Same colors as nav. Text links are `text-xs`; icon links wrap the icon inside
+a button: `size-10 inline-flex items-center justify-center rounded-sm`. Both
+use `target="_blank"` with `rel="noopener noreferrer"`. A text link's label
+is the destination name (“GitHub”, “LinkedIn”), never “here”. An icon link
+covers the one place the icon stands alone: render it in `currentColor` through
+a CSS mask (never color), and give it `aria-label` plus `title` with the
+destination name.
 
 ### Button
 

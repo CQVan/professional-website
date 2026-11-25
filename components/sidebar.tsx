@@ -11,8 +11,12 @@ const pages = [
 ];
 
 const socials = [
-  { href: "https://github.com/CQVan", label: "GitHub" },
-  { href: "https://www.linkedin.com/in/cqvan/", label: "LinkedIn" },
+  { href: "https://github.com/CQVan", label: "GitHub", icon: "/github.svg" },
+  {
+    href: "https://www.linkedin.com/in/cqvan/",
+    label: "LinkedIn",
+    icon: "/linkedin.svg",
+  },
 ];
 
 export default function Sidebar() {
@@ -23,7 +27,7 @@ export default function Sidebar() {
       <div>
         <Link
           href="/"
-          className="text-base font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+          className="text-xl font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
         >
           Chandler Van
         </Link>
@@ -56,16 +60,25 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      <ul className="flex gap-5 md:mt-auto md:pt-10">
-        {socials.map((social) => (
-          <li key={social.href}>
+      <ul className="flex md:mt-auto md:pt-10">
+        {socials.map((social, index) => (
+          <li key={social.href} className={index === 0 ? "-ml-[10px]" : ""}>
             <a
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-muted transition-colors duration-150 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+              aria-label={social.label}
+              title={social.label}
+              className="inline-flex size-10 items-center justify-center rounded-sm text-muted transition-colors duration-150 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
             >
-              {social.label}
+              <span
+                aria-hidden="true"
+                className="block size-5 bg-current [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain]"
+                style={{
+                  maskImage: `url(${social.icon})`,
+                  WebkitMaskImage: `url(${social.icon})`,
+                }}
+              />
             </a>
           </li>
         ))}

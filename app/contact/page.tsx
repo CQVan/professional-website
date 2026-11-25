@@ -18,6 +18,8 @@ export default function ContactPage() {
       reason: formData.get("reason"),
       message: formData.get("message"),
     };
+
+    // TODO: Have form data be emailed to me
   }
 
   return (

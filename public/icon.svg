@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Circular C -->
+  <path
+    d="M17.3 7.3
+       A7 7 0 1 0 17.3 16.7
+       L16.2 15.6
+       A5.5 5.5 0 1 1 16.2 8.4
+       Z"
+    fill="#000000"
+  />
+
+  <!-- Wide, thin, slightly shorter V -->
+  <path
+    d="M5.8 5
+       L7.4 5
+       L12 17.5
+       L16.6 5
+       L18.2 5
+       L13 19.5
+       L11 19.5
+       Z"
+    fill="#000000"
+  />
+</svg>
