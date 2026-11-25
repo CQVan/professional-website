@@ -1,5 +1,9 @@
+"use cache";
+
 import { Experience } from "@/types";
 import experienceData from "@/public/data/experience.json";
+
+import Link from "next/link";
 
 function calculateYears(): number {
   const now = new Date();
@@ -60,7 +64,7 @@ function getPeriod(experience: Experience): string {
   return `${startStr} - ${endStr}`;
 }
 
-export default function ExperiencePage() {
+export default async function ExperiencePage() {
   const experiences = getExperiences();
   const years = calculateYears();
 
@@ -92,6 +96,17 @@ export default function ExperiencePage() {
           )}
         </section>
       ))}
+
+      <div className="mt-12">
+        <Link
+          href="/resume/Fall%202026%20Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block border border-hairline rounded-sm px-4 py-2 text-sm transition-colors duration-150 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-current hover:text-foreground"
+        >
+          View Full Resume
+        </Link>
+      </div>
     </div>
   );
 }
