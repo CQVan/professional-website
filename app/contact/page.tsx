@@ -1,6 +1,6 @@
 "use client";
 
-import type { SubmitEvent } from "react";
+import { useState, type SubmitEvent } from "react";
 
 const fieldClass =
   "w-full rounded-sm border border-hairline bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-current";
@@ -8,18 +8,35 @@ const fieldClass =
 const labelClass = "mb-1.5 block text-xs font-medium text-foreground";
 
 export default function ContactPage() {
-  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
-    const formData = new FormData(event.currentTarget);
+  const [status, setStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
 
-    const message = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      reason: formData.get("reason"),
-      message: formData.get("message"),
-    };
+  async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus({ success: true, message: "Sending..." });
 
-    // TODO: Have form data be emailed to me
+    const formData = new FormData(event.target);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus({ success: true, message: "Form Submitted Successfully" });
+        event.target.reset();
+      } else {
+        setStatus({ success: false, message: data.message || "Error" });
+      }
+    } catch (error) {
+      console.log(error);
+      setStatus({ success: false, message: "Failed to send message." });
+    }
   }
 
   return (
@@ -35,6 +52,17 @@ export default function ContactPage() {
         onSubmit={handleSubmit}
         className="mt-10 flex max-w-md flex-col gap-5"
       >
+        <input
+          type="hidden"
+          name="access_key"
+          value="2a9b84b3-98ee-4ecf-94a4-1960420e5f04"
+        />
+        <input
+          type="checkbox"
+          name="botcheck"
+          className="hidden"
+          style={{ display: "none" }}
+        />
         <div>
           <label htmlFor="name" className={labelClass}>
             Name
@@ -106,6 +134,16 @@ export default function ContactPage() {
         >
           Send message
         </button>
+
+        {status && (
+          <p
+            className={`text-sm ${
+              status.success ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {status.message}
+          </p>
+        )}
       </form>
     </div>
   );
